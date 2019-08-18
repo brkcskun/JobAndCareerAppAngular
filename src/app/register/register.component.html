@@ -3,19 +3,19 @@
   <hr>
 
   <div class="form-group">
-    <input type="text" class="form-control" required name="username" [(ngModel)]="model.username" placeholder="Username">
+    <input type="text" class="form-control" required name="kullaniciadi" [(ngModel)]="model.kullaniciadi" placeholder="Kullaniciadi">
   </div>
 
   <div class="form-group">
-    <input type="password" class="form-control" required name="password" [(ngModel)]="model.password" placeholder="Password">
+    <input type="password" class="form-control" required name="sifre" [(ngModel)]="model.sifre" placeholder="Sifre">
   </div>
 
-  <div class="form-group">
+  <!-- <div class="form-group">
     <label for="favoriteValue">What is your sector?</label>
     <select class="form-control" id="favoriteValue">
       <option *ngFor="let value of valuesFromHome" [value]="value">{{value}}</option>
     </select>
-  </div>
+  </div> -->
 
   <div class="form-group text-center">
     <button class="btn btn-success" type="submit">Register</button>

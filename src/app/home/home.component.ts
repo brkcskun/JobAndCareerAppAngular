@@ -12,26 +12,26 @@ export class HomeComponent implements OnInit {
   constructor(private httpClient: HttpClient) {}
 
   ngOnInit() {
-    this.getValues();
+    // this.getValues();
   }
 
   registerToggle() {
     this.registerMode = true;
   }
 
-  values: any;
+  // values: any;
 
-  getValues() {
-    this.httpClient.get("http://localhost:4004/api/values").subscribe(
-      response => {
-        this.values = response;
-        console.log(this.values);
-      },
-      error => {
-        console.log(error);
-      }
-    );
-  }
+  // getValues() {
+  //   this.httpClient.get("http://localhost:4004/api/values").subscribe(
+  //     response => {
+  //       this.values = response;
+  //       console.log(this.values);
+  //     },
+  //     error => {
+  //       console.log(error);
+  //     }
+  //   );
+  // }
 
   cancelRegisterMode(registerMode: boolean) {
     this.registerMode = false;
