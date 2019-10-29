@@ -18,10 +18,10 @@ export class NavComponent implements OnInit {
   login() {
     this.authService.login(this.model).subscribe(
       next => {
-        this.alertifyService.success("Logged in successfully!");
+        this.alertifyService.success("Giriş başarılı!");
       },
       error => {
-        this.alertifyService.error("Failed to login..");
+        this.alertifyService.error("Hatalı kullanıcı adı veya şifre!");
       }
     );
   }
@@ -33,7 +33,7 @@ export class NavComponent implements OnInit {
 
   logOut() {
     localStorage.removeItem("token");
-    this.alertifyService.success("Logged out successfully!");
+    this.alertifyService.success("Giriş başarılı!");
   }
 
   ngOnInit() {}

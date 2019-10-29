@@ -1,17 +1,17 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Career App</a>
+  <a class="navbar-brand" href="#">Kariyerim.net</a>
   <ul class="navbar-nav mr-auto">
-    <li class="nav-item active">
-      <a class="nav-link" href="#">Your Favorites <span class="sr-only">(current)</span></a>
-    </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Lists</a>
-    </li>
+      <a class="nav-link" [routerLink]="['/companies']" routerLinkActive="active">Şirketler <span class="sr-only"></span></a>
+    </li>  
     <li class="nav-item">
-      <a class="nav-link disabled" href="#">Messages</a>
+      <a class="nav-link"  [routerLink]="['/jobs']" routerLinkActive="active">İş İlanları <span class="sr-only"></span></a>
+    </li>    
+    <li *ngIf="loggedIn()" class="nav-item">
+      <a class="nav-link"  [routerLink]="['/messages']" routerLinkActive="active">Mesajlarım <span class="sr-only"></span></a>
     </li>  
     <li *ngIf="loggedIn()" class="nav-item">
-      <a class="nav-link" href="#" (click)="logOut()"><i class="fa fa-sign-out"></i>Logout</a>
+      <a class="nav-link" href="#" (click)="logOut()"><i class="fa fa-sign-out"></i>Çıkış yap</a>
     </li>    
   </ul>
 
@@ -20,7 +20,7 @@
       Welcome Burak
     </a>
     <div class="dropdown-menu">
-      <a class="dropdown-item" href="#"><i class="fa fa-user"></i>Edit Profile</a>
+      <a class="dropdown-item" href="#"><i class="fa fa-user"></i>Profil Güncelle</a>
       <div class="dropdown-divider" href="#"></div>
       <!-- <a class="dropdown-item" href="#" (click)="logOut()"><i class="fa fa-sign-out"></i>Logout</a> -->
     </div>

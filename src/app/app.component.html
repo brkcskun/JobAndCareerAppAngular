@@ -1,4 +1,13 @@
-<app-nav></app-nav> 
-<app-home></app-home>
+<app-nav></app-nav>
+<div class="container-fluid">
+  <router-outlet></router-outlet>
+</div>
+<!-- loader.component.html -->
+<div class="progress-loader" [hidden]="!loading">
+ 
+    <mat-progress-spinner [mode]="'indeterminate'">
+    </mat-progress-spinner>
+ 
+</div>
 
-<router-outlet></router-outlet>
+<br /><br />

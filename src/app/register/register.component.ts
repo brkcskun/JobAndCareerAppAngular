@@ -13,23 +13,23 @@ export class RegisterComponent implements OnInit {
 
   constructor(private authService: AuthService,private alertifyService:AlertifyService) {}
 
-  model: any = {};
+  // model: any = {}; 
 
-  register() {
-    this.authService.register(this.model).subscribe(
-      function() {
-        this.alertifyService.success("Registeration successful!");
-      },
-      error => {
-        console.log(error);
-      }
-    );
-  }
+  // register() {
+  //   this.authService.register(this.model).subscribe(
+  //     function() {
+  //       this.alertifyService.success("Registeration successful!");
+  //     },
+  //     error => {
+  //       console.log(error);
+  //     }
+  //   );
+  // }
 
-  cancel() {
-    this.cancelRegister.emit(false);
-    this.alertifyService.warning("Registeration successful!");
-  }
+  // cancel() {
+  //   this.cancelRegister.emit(false);
+  //   this.alertifyService.warning("Registeration successful!");
+  // }
 
   ngOnInit() {}
 }
