@@ -1,0 +1,16 @@
+<br />
+<div class="col-md-6">
+  <a href="/jobs" class="btn btn-primary" style="margin-bottom: 10px;" >İlanlara Geri Dön</a>
+  <div class="card">
+    <h5 class="card-header">GENEL NİTELİKLER VE İŞ TANIMI</h5>
+    <div class="card-body">
+      <img width="600px" [src]="job?.company_logo" style="margin-bottom: 10px;" />      
+      <p style="margin-bottom: -3px;">Ünvan: {{ job?.title }}</p>
+      <p style="margin-bottom: -3px;">Şirket Adı: {{ job?.company }}</p>
+      <p>Yer: {{ job?.location }}</p>
+
+      <p [innerHTML]="job?.description"></p>
+      <a class="btn btn-primary" (click)="apply(job)">Başvuru Yap</a>
+    </div>
+  </div>
+</div>

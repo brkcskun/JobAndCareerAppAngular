@@ -2,12 +2,14 @@
 <div class="container-fluid">
   <router-outlet></router-outlet>
 </div>
-<!-- loader.component.html -->
-<div class="progress-loader" [hidden]="!loading">
- 
-    <mat-progress-spinner [mode]="'indeterminate'">
-    </mat-progress-spinner>
- 
-</div>
+
+<ngx-spinner></ngx-spinner>
+<ngx-spinner
+  bdColor="rgba(51,51,51,0.8)"
+  size="medium"
+  color="#fff"
+  type="ball-scale-multiple">
+  <p style="font-size: 20px; color: white">Lütfen bekleyiniz...</p>
+</ngx-spinner>
 
 <br /><br />

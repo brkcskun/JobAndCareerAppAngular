@@ -5,10 +5,12 @@ import { JobsComponent } from './jobs/jobs.component';
 import { HomeComponent } from './home/home.component';
 import { LoginGuard } from './login/login.guard';
 import { MessagesComponent } from './messages/messages.component';
+import { JobDetailComponent } from './job-detail/job-detail.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
   { path: "jobs", component: JobsComponent, canActivate: [LoginGuard] },
+  { path: "jobdetail/:jobId", component: JobDetailComponent },
   { path: "companies", component: CompaniesComponent },
   { path: "messages", component: MessagesComponent },
   { path: "**", redirectTo: "", pathMatch: "full" }

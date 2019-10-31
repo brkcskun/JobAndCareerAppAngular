@@ -15,6 +15,8 @@ import { AlertifyService } from './_services/alertify.service';
 import { LoginGuard } from './login/login.guard';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { NgxSpinnerModule } from "ngx-spinner";
+import { JobDetailComponent } from './job-detail/job-detail.component';  
 
 
 @NgModule({
@@ -26,7 +28,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
       RegisterComponent,
       MessagesComponent,
       CompaniesComponent,
-      JobsComponent
+      JobsComponent,
+      JobDetailComponent
    ],
    imports: [
       BrowserModule,
@@ -34,7 +37,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
       AppRoutingModule,
       FormsModule,
       HttpClientModule,
-      MatProgressSpinnerModule
+      MatProgressSpinnerModule,  
+      NgxSpinnerModule
    ],
    providers: [AlertifyService,LoginGuard],
    bootstrap: [

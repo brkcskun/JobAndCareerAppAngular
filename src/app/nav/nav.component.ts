@@ -33,7 +33,7 @@ export class NavComponent implements OnInit {
 
   logOut() {
     localStorage.removeItem("token");
-    this.alertifyService.success("Giriş başarılı!");
+    this.alertifyService.success("Çıkış başarılı!");
   }
 
   ngOnInit() {}

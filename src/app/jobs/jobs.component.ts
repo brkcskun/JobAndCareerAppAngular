@@ -1,8 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { JobService } from "../_services/Job.service";
 import { AlertifyService } from "../_services/alertify.service";
-import { error } from 'util';
-import { Job } from '../models/Job';
+import { error } from "util";
+import { Job } from "../models/Job";
+import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
   selector: "app-jobs",
@@ -11,24 +12,32 @@ import { Job } from '../models/Job';
   providers: [JobService]
 })
 export class JobsComponent implements OnInit {
-  listTitle = "Job List";
+  listTitle = "İş İlanları";
   jobs: Job[];
   job: Job;
 
   constructor(
     private jobService: JobService,
-    private alertify: AlertifyService
+    private alertify: AlertifyService,
+    private SpinnerService: NgxSpinnerService
   ) {}
 
   ngOnInit() {
-    this.jobService.getjobs().subscribe(
-      data => {this.jobs = data;
-      },
-      error=>{this.alertify.error("Hata oluştu.")}
-      );
+    this.GetJobList();
   }
 
-  apply(job) {
-   this.alertify.success("Successfully applied for " + job.title);
+  GetJobList() {
+    this.SpinnerService.show();
+    setTimeout(() => {
+      this.jobService.getjobs().subscribe(
+        data => {
+          this.jobs = data;
+          this.SpinnerService.hide();
+        },
+        error => {
+          this.alertify.error("Hata oluştu.");
+        }
+      );
+    }, 500);
   }
-} 
+}
